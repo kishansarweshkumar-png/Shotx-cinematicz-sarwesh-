@@ -1,187 +1,191 @@
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-    background:#05070d;
-    color:#fff;
-    line-height:1.7;
+background:#05070d;
+color:#fff;
+line-height:1.7;
 }
 
 header{
-    text-align:center;
-    padding:40px 20px;
-    background:linear-gradient(135deg,#000,#0b2d6b);
+background:linear-gradient(135deg,#000,#0b2d6b);
+text-align:center;
+padding:35px 20px;
+box-shadow:0 5px 20px rgba(0,0,0,.4);
 }
 
 .logo img{
-    width:120px;
-    height:120px;
-    border-radius:50%;
-    border:4px solid #00bfff;
-    object-fit:cover;
-    box-shadow:0 0 20px #00bfff;
+width:120px;
+height:120px;
+border-radius:50%;
+border:4px solid #00bfff;
+box-shadow:0 0 25px #00bfff;
+object-fit:cover;
 }
 
-h1{
-    margin-top:15px;
-    font-size:34px;
-    color:#00bfff;
+header h1{
+margin-top:15px;
+font-size:35px;
+color:#00bfff;
 }
 
-.tagline{
-    color:#d9d9d9;
-    margin-top:8px;
-    font-size:17px;
+header p{
+color:#ddd;
+font-size:18px;
 }
 
-section{
-    width:90%;
-    max-width:900px;
-    margin:40px auto;
-    background:#111827;
-    border-radius:18px;
-    padding:30px;
-    text-align:center;
-    box-shadow:0 0 20px rgba(0,191,255,.15);
+.hero{
+padding:70px 20px;
+text-align:center;
 }
 
-section h2{
-    color:#00bfff;
-    margin-bottom:18px;
+.hero h2{
+font-size:40px;
+color:#00bfff;
+margin-bottom:20px;
 }
 
-section p{
-    color:#e5e5e5;
-    font-size:16px;
+.hero p{
+max-width:800px;
+margin:auto;
+font-size:18px;
+color:#ddd;
 }
 
 .btn{
-    display:inline-block;
-    margin-top:25px;
-    padding:14px 32px;
-    background:#00bfff;
-    color:#fff;
-    text-decoration:none;
-    border-radius:30px;
-    font-weight:600;
-    transition:.3s;
+display:inline-block;
+margin-top:30px;
+padding:15px 35px;
+background:#00bfff;
+color:#fff;
+text-decoration:none;
+border-radius:40px;
+font-weight:600;
+transition:.3s;
 }
 
 .btn:hover{
-    background:#0088cc;
-    transform:translateY(-3px);
+background:#0088cc;
+transform:translateY(-5px);
+box-shadow:0 0 20px #00bfff;
 }
 
-.founder img{
-    width:170px;
-    height:170px;
-    object-fit:cover;
-    border-radius:50%;
-    border:4px solid #00bfff;
-    margin:20px 0;
-    box-shadow:0 0 18px #00bfff;
+section{
+width:90%;
+max-width:1000px;
+margin:40px auto;
+background:#111827;
+padding:30px;
+border-radius:20px;
+box-shadow:0 0 20px rgba(0,191,255,.15);
+text-align:center;
 }
 
-.social a{
-    display:block;
-    margin:15px auto;
-    width:230px;
-    padding:14px;
-    text-decoration:none;
-    color:#fff;
-    border-radius:30px;
-    font-weight:600;
-    transition:.3s;
+section h2{
+color:#00bfff;
+margin-bottom:20px;
+font-size:30px;
+}
+
+section p{
+color:#ddd;
+font-size:17px;
+}
+.founder-img{
+width:180px;
+height:180px;
+border-radius:50%;
+border:4px solid #00bfff;
+object-fit:cover;
+margin:20px 0;
+box-shadow:0 0 25px #00bfff;
+}
+
+.youtube,
+.instagram{
+display:block;
+width:280px;
+margin:15px auto;
+padding:15px;
+text-decoration:none;
+color:#fff;
+font-size:18px;
+font-weight:600;
+border-radius:40px;
+transition:.3s;
 }
 
 .youtube{
-    background:#ff0000;
+background:#ff0000;
 }
 
 .instagram{
-    background:linear-gradient(45deg,#833ab4,#fd1d1d,#fcb045);
+background:linear-gradient(45deg,#833ab4,#fd1d1d,#fcb045);
 }
 
-.social a:hover{
-    transform:scale(1.05);
+.youtube:hover,
+.instagram:hover{
+transform:scale(1.05);
+box-shadow:0 0 20px rgba(255,255,255,.3);
 }
 
 footer{
-    text-align:center;
-    padding:20px;
-    color:#bbb;
-    font-size:14px;
-    margin-top:30px;
-    border-top:1px solid #222;
+background:#000;
+padding:30px 20px;
+text-align:center;
+margin-top:50px;
+border-top:2px solid #00bfff;
+}
+
+footer h3{
+color:#00bfff;
+margin-bottom:10px;
+}
+
+footer p{
+color:#bbb;
+margin:6px 0;
 }
 
 @media(max-width:768px){
 
 .logo img{
-    width:95px;
-    height:95px;
+width:90px;
+height:90px;
 }
 
-h1{
-    font-size:28px;
+header h1{
+font-size:28px;
+}
+
+.hero h2{
+font-size:28px;
+}
+
+.hero p,
+section p{
+font-size:15px;
 }
 
 section{
-    padding:22px;
+padding:20px;
 }
 
-.founder img{
-    width:140px;
-    height:140px;
+.founder-img{
+width:140px;
+height:140px;
 }
 
-.social a{
-    width:100%;
+.youtube,
+.instagram,
+.btn{
+width:100%;
+max-width:300px;
 }
 
-}
-
-// ===== Scroll Animation =====
-
-const sections = document.querySelectorAll("section");
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-        }
-    });
-}, {
-    threshold: 0.2
-});
-
-sections.forEach((section) => {
-    section.classList.add("hidden");
-    observer.observe(section);
-});
-
-// ===== Header Animation =====
-
-window.addEventListener("load", () => {
-    document.querySelector("header").classList.add("show");
-});
-
-// ===== Button Hover Effect =====
-
-const buttons = document.querySelectorAll(".btn, .social a");
-
-buttons.forEach(button => {
-
-    button.addEventListener("mouseenter", () => {
-        button.style.transform = "scale(1.05)";
-    });
-
-    button.addEventListener("mouseleave", () => {
-        button.style.transform = "scale(1)";
-    });
-
-});
+    }
