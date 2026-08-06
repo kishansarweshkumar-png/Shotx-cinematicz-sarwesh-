@@ -48,11 +48,14 @@ You can purchase it today and get instant access on the launch day.
 </p>
 
 <h3>📅 Launch Date</h3>
-
 <p>1 September 2026</p>
 
-<h3>💰 Price</h3>
+<h3>⏳ Launch Countdown</h3>
+<p id="countdown" style="font-size:22px;font-weight:bold;color:#00bfff;">
+Loading...
+</p>
 
+<h3>💰 Price</h3>
 <p>₹299</p>
 
 <p style="color:red;font-weight:bold;">
@@ -78,6 +81,31 @@ You can purchase it today and get instant access on the launch day.
 <p>© 2026 Shotx Cinematicz. All Rights Reserved.</p>
 
 </footer>
+
+<script>
+const launchDate = new Date("September 1, 2026 00:00:00").getTime();
+
+const timer = setInterval(function () {
+
+const now = new Date().getTime();
+const distance = launchDate - now;
+
+if (distance < 0) {
+clearInterval(timer);
+document.getElementById("countdown").innerHTML = "🎉 Course is Live Now!";
+return;
+}
+
+const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+document.getElementById("countdown").innerHTML =
+days + " Days " + hours + " Hours " + minutes + " Minutes " + seconds + " Seconds";
+
+}, 1000);
+</script>
 
 </body>
 </html>
