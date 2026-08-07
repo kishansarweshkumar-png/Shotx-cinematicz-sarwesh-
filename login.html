@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Login - Shotx Premium Course</title>
+    <title>Login - Shotx Premium Course</title>
 </head>
 
 <body>
@@ -9,47 +9,52 @@
 <h1>Login To Continue</h1>
 
 <button id="googleLogin">
-Login With Google
+    Login With Google
 </button>
-
 
 <script type="module">
 
-import { auth } from "./firebase.js";
+import { auth, db } from "./firebase.js";
 
-import { 
-GoogleAuthProvider,
-signInWithPopup 
+import {
+    GoogleAuthProvider,
+    signInWithPopup
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 
+import {
+    doc,
+    setDoc
+} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
 const provider = new GoogleAuthProvider();
 
+document.getElementById("googleLogin").onclick = async () => {
 
-document.getElementById("googleLogin").onclick = async()=>{
+    try {
 
-try{
+        const result = await signInWithPopup(auth, provider);
 
-const result = await signInWithPopup(auth, provider);
+        const user = result.user;
 
-alert("Login Successful");
+        await setDoc(doc(db, "users", user.uid), {
+            name: user.displayName,
+            email: user.email,
+            coursePurchased: false
+        });
 
-window.location.href="index.html";
+        alert("Login Successful");
 
+        window.location.href = "index.html";
 
-}
+    } catch (error) {
 
-catch(error){
+        alert(error.message);
 
-alert(error.message);
-
-}
+    }
 
 };
 
-
 </script>
-
 
 </body>
 </html>
