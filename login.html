@@ -1,1 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login - Shotx Premium Course</title>
+</head>
 
+<body>
+
+<h1>Login To Continue</h1>
+
+<button id="googleLogin">
+Login With Google
+</button>
+
+
+<script type="module">
+
+import { auth } from "./firebase.js";
+
+import { 
+GoogleAuthProvider,
+signInWithPopup 
+} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+
+
+const provider = new GoogleAuthProvider();
+
+
+document.getElementById("googleLogin").onclick = async()=>{
+
+try{
+
+const result = await signInWithPopup(auth, provider);
+
+alert("Login Successful");
+
+window.location.href="index.html";
+
+
+}
+
+catch(error){
+
+alert(error.message);
+
+}
+
+};
+
+
+</script>
+
+
+</body>
+</html>
