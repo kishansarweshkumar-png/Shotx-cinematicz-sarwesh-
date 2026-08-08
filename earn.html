@@ -193,13 +193,15 @@ body{
     border-radius:14px;
     overflow:hidden;
     border:1px solid #34385a;
+    position:relative;
+    aspect-ratio:16/9;
 }
 
-.video-box video{
+.video-box iframe{
     display:block;
     width:100%;
-    max-height:520px;
-    background:#000;
+    height:100%;
+    border:0;
 }
 
 .lesson-info{
@@ -477,21 +479,13 @@ footer p{
 
         <div class="video-box">
 
-            <!--
-            IMPORTANT:
-            Yahan apne sample video ka URL
-            src ke andar paste karna.
-            -->
-
-            <video controls playsinline preload="metadata">
-
-                <source
-                    src="YOUR-VIDEO-LINK-HERE.mp4"
-                    type="video/mp4">
-
-                Your browser does not support video.
-
-            </video>
+            <!-- YouTube Sample Video -->
+            <iframe
+                src="https://www.youtube.com/embed/TdIWujpBpWU"
+                title="Sample: CutOut Edit"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
 
         </div>
 
@@ -503,26 +497,26 @@ footer p{
             </span>
 
             <h3>
-                Introduction to Super Skills Course
+                Sample: CutOut Edit
             </h3>
 
             <p>
-                Is video me aap course ke baare me
-                jaanoge aur hum kya kya seekhne wale hain.
+                Is sample video me CutOut Edit ka basic
+                process aur editing technique dikhayi gayi hai.
             </p>
 
             <div class="info-pills">
 
                 <span class="pill">
-                    🕐 Introduction
-                </span>
-
-                <span class="pill">
-                    📊 Beginner
+                    ✂️ CutOut Edit
                 </span>
 
                 <span class="pill">
                     🎬 Video Editing
+                </span>
+
+                <span class="pill">
+                    📚 Sample Lesson
                 </span>
 
             </div>
@@ -644,6 +638,5 @@ footer p{
 
 </footer>
 
-
 </body>
-    </html>
+</html>
