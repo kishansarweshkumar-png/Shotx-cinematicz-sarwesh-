@@ -1,20 +1,649 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Premium Course</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Super Skills Course | Shotx Cinematicz</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#050510;
+    color:#fff;
+    line-height:1.6;
+}
+
+/* TOP BAR */
+.topbar{
+    padding:18px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    background:rgba(5,5,16,.92);
+    position:sticky;
+    top:0;
+    z-index:100;
+    backdrop-filter:blur(12px);
+}
+
+.logo{
+    font-size:20px;
+    font-weight:800;
+}
+
+.logo span{
+    color:#7c3cff;
+}
+
+.premium{
+    background:linear-gradient(90deg,#1769ff,#a832ff);
+    padding:8px 14px;
+    border-radius:30px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+/* HERO */
+.hero{
+    position:relative;
+    overflow:hidden;
+    padding:55px 22px 45px;
+    background:
+    radial-gradient(circle at 80% 30%,rgba(104,43,255,.30),transparent 35%),
+    radial-gradient(circle at 20% 70%,rgba(0,119,255,.18),transparent 35%),
+    #050510;
+}
+
+.badge{
+    display:inline-block;
+    padding:8px 15px;
+    border-radius:30px;
+    background:linear-gradient(90deg,#123f9f,#5d16a9);
+    border:1px solid #635bff;
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:42px;
+    line-height:1.08;
+    margin-bottom:18px;
+}
+
+.gradient-text{
+    background:linear-gradient(90deg,#1683ff,#8c35ff,#e13cff);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.hero p{
+    color:#bfc2d0;
+    font-size:16px;
+    max-width:600px;
+    margin-bottom:25px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    text-decoration:none;
+    color:#fff;
+    padding:13px 20px;
+    border-radius:12px;
+    font-weight:bold;
+    border:1px solid #444;
+}
+
+.btn-primary{
+    background:linear-gradient(90deg,#126cff,#a528ff);
+    border:none;
+    box-shadow:0 0 25px rgba(91,45,255,.35);
+}
+
+.btn-secondary{
+    background:#10111d;
+}
+
+/* FEATURES */
+.features{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    max-width:900px;
+    margin:0 auto;
+    padding:0 20px 35px;
+}
+
+.feature{
+    background:#0c0d19;
+    border:1px solid #202338;
+    border-radius:14px;
+    padding:16px 10px;
+    text-align:center;
+}
+
+.feature-icon{
+    font-size:25px;
+    margin-bottom:5px;
+}
+
+.feature strong{
+    display:block;
+    font-size:13px;
+}
+
+.feature small{
+    color:#9296a8;
+}
+
+/* COURSE */
+.course-section{
+    max-width:1000px;
+    margin:auto;
+    padding:35px 18px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:28px;
+}
+
+.section-title .icon{
+    font-size:28px;
+}
+
+.section-title h2{
+    font-size:32px;
+}
+
+.section-title h2 span{
+    color:#9b42ff;
+}
+
+.section-title p{
+    color:#969aaa;
+}
+
+/* VIDEO CARD */
+.video-card{
+    background:linear-gradient(145deg,#0d0f1e,#090a13);
+    border:1px solid #292d4a;
+    border-radius:20px;
+    padding:15px;
+    box-shadow:0 0 35px rgba(74,39,255,.10);
+}
+
+.video-box{
+    width:100%;
+    background:#000;
+    border-radius:14px;
+    overflow:hidden;
+    border:1px solid #34385a;
+}
+
+.video-box video{
+    display:block;
+    width:100%;
+    max-height:520px;
+    background:#000;
+}
+
+.lesson-info{
+    padding:20px 5px 5px;
+}
+
+.lesson-tag{
+    display:inline-block;
+    background:linear-gradient(90deg,#5821ad,#8535db);
+    padding:5px 12px;
+    border-radius:8px;
+    font-size:11px;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+.lesson-info h3{
+    font-size:21px;
+    margin-bottom:8px;
+}
+
+.lesson-info p{
+    color:#999daf;
+    font-size:14px;
+}
+
+/* INFO PILLS */
+.info-pills{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-top:15px;
+}
+
+.pill{
+    background:#151827;
+    border:1px solid #292e46;
+    padding:7px 12px;
+    border-radius:9px;
+    color:#c9ccda;
+    font-size:12px;
+}
+
+/* UPCOMING */
+.upcoming{
+    margin-top:18px;
+}
+
+.upcoming-item{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:#0b0d18;
+    border:1px solid #20253b;
+    border-radius:13px;
+    padding:14px;
+    margin-bottom:9px;
+}
+
+.lesson-name{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.lesson-number{
+    color:#9c43ff;
+    font-weight:bold;
+    font-size:12px;
+}
+
+.lock{
+    color:#68a7ff;
+    font-size:13px;
+}
+
+/* CTA */
+.cta{
+    margin-top:30px;
+    padding:24px;
+    border-radius:18px;
+    border:1px solid #7134b5;
+    background:
+    radial-gradient(circle at 20% 50%,rgba(91,36,255,.22),transparent 40%),
+    #0c0e20;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.cta h3{
+    font-size:21px;
+}
+
+.cta p{
+    color:#9d9fb0;
+}
+
+.cta strong{
+    color:#a94aff;
+}
+
+/* FOOTER */
+footer{
+    margin-top:25px;
+    padding:35px 20px;
+    text-align:center;
+    border-top:1px solid #191c2d;
+    background:#030309;
+}
+
+.footer-logo{
+    font-size:22px;
+    font-weight:bold;
+}
+
+.footer-logo span{
+    color:#963cff;
+}
+
+footer p{
+    color:#777b8c;
+    font-size:13px;
+    margin-top:8px;
+}
+
+.copyright{
+    margin-top:18px;
+    color:#55596b;
+    font-size:11px;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .feature{
+        display:flex;
+        align-items:center;
+        gap:12px;
+        text-align:left;
+    }
+
+    .feature-icon{
+        margin:0;
+    }
+
+    .section-title h2{
+        font-size:27px;
+    }
+
+    .cta{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .cta .btn{
+        width:100%;
+        text-align:center;
+    }
+
+}
+</style>
 </head>
 
 <body>
 
-    <h1>🎓 Super Skills Course</h1>
+<!-- TOP BAR -->
+<header class="topbar">
 
-    <h2>Welcome to the Premium Course</h2>
+    <div class="logo">
+        🎥 <span>Shotx</span> Cinematicz
+    </div>
 
-    <p>Watch all your course videos below.</p>
+    <div class="premium">
+        ⭐ PREMIUM COURSE
+    </div>
 
-    <h3>▶️ Course Videos</h3>
+</header>
 
-    <!-- Videos यहाँ बाद में add करेंगे -->
+
+<!-- HERO -->
+<section class="hero">
+
+    <div class="badge">
+        🎓 SUPER SKILLS COURSE
+    </div>
+
+    <h1>
+        Welcome to the
+        <span class="gradient-text">
+            Premium Course
+        </span>
+    </h1>
+
+    <p>
+        Yahan aapko Professional Video Editing
+        seekhne ka complete roadmap step by step
+        milega.
+    </p>
+
+    <div class="hero-buttons">
+
+        <a href="#course" class="btn btn-primary">
+            🚀 Start Learning
+        </a>
+
+        <a href="#course" class="btn btn-secondary">
+            ⓘ Course Info
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FEATURES -->
+<section class="features">
+
+    <div class="feature">
+        <div class="feature-icon">🎬</div>
+        <div>
+            <strong>High Quality</strong>
+            <small>Videos</small>
+        </div>
+    </div>
+
+    <div class="feature">
+        <div class="feature-icon">🛡️</div>
+        <div>
+            <strong>Lifetime</strong>
+            <small>Access</small>
+        </div>
+    </div>
+
+    <div class="feature">
+        <div class="feature-icon">✅</div>
+        <div>
+            <strong>Step by Step</strong>
+            <small>Learning</small>
+        </div>
+    </div>
+
+</section>
+
+
+<!-- COURSE SECTION -->
+<section class="course-section" id="course">
+
+    <div class="section-title">
+
+        <div class="icon">▶️</div>
+
+        <h2>
+            Course <span>Videos</span>
+        </h2>
+
+        <p>
+            Watch all your course videos below.
+        </p>
+
+    </div>
+
+
+    <!-- SAMPLE VIDEO -->
+    <div class="video-card">
+
+        <div class="video-box">
+
+            <!--
+            IMPORTANT:
+            Yahan apne sample video ka URL
+            src ke andar paste karna.
+            -->
+
+            <video controls playsinline preload="metadata">
+
+                <source
+                    src="YOUR-VIDEO-LINK-HERE.mp4"
+                    type="video/mp4">
+
+                Your browser does not support video.
+
+            </video>
+
+        </div>
+
+
+        <div class="lesson-info">
+
+            <span class="lesson-tag">
+                LESSON 01
+            </span>
+
+            <h3>
+                Introduction to Super Skills Course
+            </h3>
+
+            <p>
+                Is video me aap course ke baare me
+                jaanoge aur hum kya kya seekhne wale hain.
+            </p>
+
+            <div class="info-pills">
+
+                <span class="pill">
+                    🕐 Introduction
+                </span>
+
+                <span class="pill">
+                    📊 Beginner
+                </span>
+
+                <span class="pill">
+                    🎬 Video Editing
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- UPCOMING LESSONS -->
+
+    <div class="upcoming">
+
+        <div class="upcoming-item">
+
+            <div class="lesson-name">
+
+                <span class="lesson-number">
+                    LESSON 02
+                </span>
+
+                <strong>
+                    Basic Video Editing
+                </strong>
+
+            </div>
+
+            <span class="lock">
+                🔒 Coming Soon
+            </span>
+
+        </div>
+
+
+        <div class="upcoming-item">
+
+            <div class="lesson-name">
+
+                <span class="lesson-number">
+                    LESSON 03
+                </span>
+
+                <strong>
+                    Advanced Video Editing
+                </strong>
+
+            </div>
+
+            <span class="lock">
+                🔒 Coming Soon
+            </span>
+
+        </div>
+
+
+        <div class="upcoming-item">
+
+            <div class="lesson-name">
+
+                <span class="lesson-number">
+                    LESSON 04
+                </span>
+
+                <strong>
+                    Professional Color Grading
+                </strong>
+
+            </div>
+
+            <span class="lock">
+                🔒 Coming Soon
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- CTA -->
+
+    <div class="cta">
+
+        <div>
+
+            <h3>
+                🚀 Apni Skills ko Next Level par le jao!
+            </h3>
+
+            <p>
+                <strong>Consistency + Practice = Mastery</strong>
+            </p>
+
+        </div>
+
+        <a href="#course" class="btn btn-primary">
+            Let's Go! 🚀
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-logo">
+        🎥 <span>Shotx</span> Cinematicz
+    </div>
+
+    <p>
+        Professional Video Shoot & Advance Video Editing
+    </p>
+
+    <div class="copyright">
+        © 2026 Shotx Cinematicz. All Rights Reserved.
+    </div>
+
+</footer>
+
 
 </body>
-</html>
+    </html>
